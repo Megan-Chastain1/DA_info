@@ -1,0 +1,358 @@
+#Skill: Use Pandas (& Check out Polars or Dask) 
+Pandas is a powerful Python library for data manipulation and analysis, commonly used during the initial stages of data exploration.
+
+With Pandas, we can quickly load, clean, and explore large datasets using easy-to-understand commands.
+It provides a simple and intuitive way to work with structured data, making it a good tool for data analysts and scientists.
+NOTE: We learn pandas because it’s the most widely used tool for data analysis in Python. As you gain skills, you might also want to explore tools like Polars (for speed) or Dask (for scaling up), especially for large or complex datasets.
+
+#Skill: Import pandas as pd
+The pd object in Pandas, which stands for the Pandas library itself, provides built-in methods for handling various types of data structures.
+
+import pandas as pd
+When we import Pandas as pd, we gain access to functions like pd.read_csv(), pd.read_excel(), and others. 
+These methods are specifically designed to load data into a DataFrame or Series, which are Pandas' core data structures. 
+Once the data is loaded, pd also offers many methods to manipulate, clean, and analyze it—such as filtering, grouping, and performing statistical operations—without needing to manually define these functions ourselves. 
+This makes data handling in Pandas both powerful and efficient.
+
+#Skill: Use the pd Read Methods
+To work with data in Pandas, we first need to load our data into a DataFrame object. 
+
+A DataFrame can be populated by reading data from various file formats such as CSV, Excel, JSON, or SQL databases. 
+For example, to load a CSV file, we use the pd.read_csv() method, which reads the file and automatically formats it into a DataFrame object.
+
+#Skill: Work with DataFrames
+A Pandas DataFrame is the main structure used to handle data in Pandas. A DataFrame is a two-dimensional table object, much like a spreadsheet, where data is organized into rows and columns. 
+For those unfamiliar with object-oriented programming (OOP), think of a DataFrame as a special table object with built-in functions (called methods) that make it easy to explore and manipulate the data.
+
+#Skill: Use df Methods for Initial Data Inspection
+During initial data inspection, we use various methods built-in every DataFrame object to quickly understand the structure and contents of our data. These methods allow us to view a sample of the data, check its size, and understand the types of data in each column. This helps us prepare the dataset for more advanced analysis and ensures we are working with clean, structured data. 
+
+Below is a table summarizing some helpful DataFrame methods for exploring our data (once it has been loaded into a DataFrame object. 
+
+ 
+
+Method/Attribute	Purpose
+df.head(N)	Displays the first N rows of the DataFrame. Defaults to 5 if N is not provided.
+df.shape	Returns a tuple with the number of rows and columns in the DataFrame.
+df.dtypes	Displays the data type of each column in the DataFrame.
+df.info()	Provides a concise summary of the DataFrame, including non-null counts and data types.
+df.describe()	Generates summary statistics for numerical columns, like mean and standard deviation.
+df.tail(N)	Displays the last N rows of the DataFrame. Defaults to 5 if N is not provided.
+
+#Skill: Use Jupyter to Create Interactive Projects
+Jupyter is an open-source project designed to support interactive computing across multiple programming languages, with Python being one of the most common. 
+The name "Jupyter" comes from Julia, Python, and R, the first three languages it supported. Now, it's over 40! 
+
+Jupyter Lab is a flexible and integrated development environment (IDE) that allows us to work with code, text, and visualizations in one place. 
+It provides additional tools like file explorers, terminals, and more.
+
+Jupyter Notebook is a simplified version of Jupyter Lab, focusing on an easy-to-use notebook interface where we can combine code, explanations, and visuals into a single, interactive document.
+
+#Skill: Know when to use a Jupyter Notebook
+A Jupyter notebook provides an interactive way to work with Python for data analysis.
+
+Unlike scripts, which are run all at once, notebooks allow analysts to execute code in smaller chunks, called cells. This makes it easy to see immediate results and adjust our approach as we go.
+
+Notebooks allow mixing code with section headings, explanations, visualizations, and equations, making them a great tool for presenting and collaboration. 
+
+#Skill: Create Python And Markdown Cells in a Notebook
+In Jupyter notebooks, we can combine languages for programming and languages for marking up text.
+
+Python Cells
+
+Python cells are used for writing and executing code.
+Markdown Cells
+
+Markdown is a markup language for text. We use it to make for report titles, section headings, lists, and can embed images to make our analysis clear and organized.
+It's the same skills used to format the README.md file in a project repository.
+Use Markdown cells for titles, section headings, and to hold text for explanations, equations, and supporting illustrations. 
+It’s important to set the cell type correctly—either to 'Code' for Python or 'Markdown' for text and formatting—so the notebook runs as expected. The combination of languages is part of what makes the 
+notebook environment compelling (there are additional languages like Julia and R that we can use as well.) 
+
+Skill: Set the Cell Type
+To set the cell type in a Jupyter Notebook, you can select the cell and use the dropdown menu in the toolbar at the top of the notebook. There, you'll see options like "Code" or "Markdown." 
+Alternatively, you can use keyboard shortcuts: press Esc to enter command mode, then press Y to change the cell to "Code" or M to change it to "Markdown."
+
+#Skill: Perform Exploratory Data Analysis (EDA)
+Jupyter Notebooks are great tools for Exploratory Data Analysis (EDA).  They allow us to write code and see results instantly, making it easy to explore data step by step. We can add Markdown cells to organize, title, and document our findings, include visualizations, 
+and make changes quickly as we discover new patterns in the data. This combination of code, 
+visuals, and documentation in one place makes Jupyter ideal for experimenting with and understanding data.
+
+#Skill: Use the DataFrame describe() method to see descriptive statistics
+df.describe() is a powerful method to quickly generate summary statistics for numerical columns in a DataFrame. This method provides important details like the count, mean, standard deviation, minimum, and maximum values, as well as quartiles. 
+It's especially useful in Exploratory Data Analysis (EDA) to understand the distribution and range of the data before performing deeper analysis. Remember, df.describe() is a method, indicated by the parentheses, which means we call it to perform an action.
+
+#Skill: Create a Histogram to analyze Numeric Distributions
+A histogram is a key tool in Exploratory Data Analysis (EDA) for understanding the distribution of a single variable.
+
+Histograms show the frequency of data points within specified ranges (or bins), giving us insights into the shape, spread, and central tendency of the data.
+
+In Pandas, we can easily generate histograms using the df.hist() method, which creates histograms for ALL numerical columns in the DataFrame.
+
+Alternatively, if we want to focus on a specific column, we can use df['column_name'].hist(), which will generate a histogram for just that column.
+
+Skill: Display Charts
+In a Jupyter Notebook, we do not need to use show() to display plots, such as histograms, because the notebook automatically renders the visualizations inline after running the cell. However, in other environments 
+like standalone Python scripts, the show() method (from the matplotlib library) is necessary to actually display the plot window.
+
+The show() method is part of matplotlib.pyplot and is used to display all open figures or plots. It’s essential in environments where plots do not automatically appear, as it tells the program to render the visualizations to the screen.
+
+#Skill: Analyze Categorical Variables & Distributions
+In Exploratory Data Analysis (EDA), understanding the distribution of categorical variables is essential.
+
+One common method is using pd.value_counts(), which gives the count of unique values in a categorical column, sorted in descending order by default.
+
+For a more visual approach, we can use sns.countplot() from the Seaborn charting library, which creates a bar plot of these value counts.
+
+When working with multiple categorical columns, we can loop through them with df.select_dtypes(include=['object', 'category']).columns, selecting only columns with object or category data types, and use sns.countplot() to plot each one.
+
+This allows us to quickly visualize the distribution of categorical data across the DataFrame.
+
+for col in df.select_dtypes(include=['object', 'category']).columns:
+    sns.countplot(x=col, data=df)
+    plt.title(f'Distribution of {col}')
+    plt.show()
+This code helps us visualize the distribution of each categorical column in a DataFrame, which is useful for detecting imbalances or patterns in the data.
+
+#Skill: Prepare Data for Analysis
+Initial data preparation is a critical step in making data ready for analysis.
+
+#Skill: Clean and Transform Data
+It often involves data cleaning and transformation tasks that help make the data more structured and usable. 
+
+Data Cleaning focuses on correcting or removing errors, ensuring data is accurate and usable. Common cleaning tasks include:
+
+Handling missing values (e.g., filling or removing)
+Removing duplicates
+Correcting data entry errors
+Filtering outliers
+Data Transformation involves modifying the data to make it more suitable for analysis or modeling. Common transformation tasks include:
+
+Renaming columns
+Creating new features (e.g., combining columns or calculating new values)
+Changing data types
+Scaling or normalizing numerical data
+Feature Engineering - adding new columns or features to facilitate analysis
+Skill: Rename Columns (Transform)
+For example, using df.rename() allows us to rename columns for better understanding. For example:
+
+df.rename(columns={'price_usd': 'Price in USD'}, inplace=True)
+Note that we provide two arguments in the example above. 
+
+columns: This argument is a Python dictionary where we map each old column name to its new one. The keys represent the original column names, and the values represent the new names. For example, {'old_name': 'new_name'} will rename the column old_name to new_name.
+inplace: This is a boolean argument. When set to True, the changes are applied directly to the original DataFrame without creating a new one. If set to False (the default), the method returns a new DataFrame with the changes, leaving the original DataFrame unchanged.
+ 
+
+#Skill: Perform Feature Engineering (Transformation)
+Feature engineering, on the other hand, goes a step further by creating new columns based on existing data, such as extracting useful information from a date column or combining several columns into one. These might involve transformations 
+like creating new features (e.g., calculating the number of days since a transaction date), making the data more informative for analysis or machine learning modeling. 
+
+#Skill: Visualize Data
+Initial visualizations are a key step in data analysis because they help us quickly identify patterns, trends, and anomalies in the dataset. By plotting the data, we can better understand relationships between variables, detect outliers, and get a sense of the overall distribution.
+
+#Skill: Use Seaborn and Matplotlib
+Libraries like Seaborn and Matplotlib make it easy to create a variety of visualizations, from scatter plots to histograms and bar charts. For example,
+
+sns.scatterplot() allows us to visualize relationships between two numerical variables, with options to categorize data points by color based on a third, categorical variable.
+sns.pairplot() is used to visualize pairwise relationships between variables in the entire dataset. It’s particularly useful for visualizing the relationships between all numerical variables, while color-coding by a categorical variable.
+sns.distplot() creates a histogram along with a density curve. This method is useful for understanding the distribution of a numerical variable.
+sns.heatmap() is used to display data in a matrix form with different colors representing the intensity of values. It’s commonly used for showing correlations between variables or in matrix-style data.
+Seaborn is built on Matplotlib and sns charts can use core chart methods. For example, functions from matplotlib.pyplot are used to set the title and axis labels for a plot: plt.title(), plt.xlabel(), plt.ylabel().
+
+#Skill: Invest Time Learning to Make Excellent Charts
+We introduce these powerful tools, but entire books (large books) are written on both. Investing time learning Seaborn and Matplotlib is crucial for excelling as an analyst - the more you learn, the more you can use these powerful tools to create clear, insightful visualizations that enhance data analysis and storytelling.
+
+Find and learn to read the official documentation for critical libraries. Use YouTube videos and/or your favorite AI assistant to master these well and level up your skills.  
+#Skill: Tell Effective Stories with Data
+Storytelling and presentation in Exploratory Data Analysis (EDA) are essential for conveying actionable insights clearly and engagingly, to help guide informed decision-making.
+
+Effective storytelling involves crafting a narrative that guides the audience through your findings, using visualizations to highlight key trends and patterns.
+
+Markdown is a powerful tool for organizing and presenting your analysis in Jupyter Notebooks by allowing you to create headings, format text, and include hyperlinks.
+By using section headings (like ##) and clear, concise language, you can ensure your analysis is easy to follow and impactful.
+Important: Leave a space after your hashtags for section levels. Verify things work the way you want. 
+ 
+
+# Example Markdown Outline for EDA
+# Exploratory Data Analysis (EDA) Report
+
+## 1. Introduction
+- Brief overview of the dataset and goals of the analysis.
+
+## 2. Data Cleaning
+- Handling missing values
+- Removing duplicates
+- Data type adjustments
+
+## 3. Initial Data Exploration
+- Descriptive statistics
+- Data structure (e.g., shape, types)
+
+## 4. Visualizing Distributions
+- Histograms and box plots
+- Count plots for categorical variables
+
+## 5. Correlation and Relationships
+- Pairwise correlations
+- Scatter plots, pair plots
+
+## 6. Feature Engineering
+- Creating new features
+- Data transformations
+
+## 7. Additional Visualizations
+- Visualizing new features and transformations
+- Iterative exploration as you become more familiar with the data
+
+## 8. Conclusions and Insights
+- Key findings
+- Actionable recommendations
+
+#Skill: Understand OOP for Professional Data Analysts
+As a data analyst, you will likely work with objects in your daily tasks, especially when using libraries like pandas, NumPy, or scikit-learn. While you may not often create objects from scratch, understanding object-oriented programming (OOP) concepts will help you effectively work with these objects and their associated methods and properties. Here’s a brief introduction to key OOP concepts you will encounter.
+
+#Skill: Employ Objects
+In object-oriented programming, an object represents a real-world entity. It has:
+
+Attributes (data) – for example, the "name" or "age" of a student.
+Behaviors (methods) – for example, the ability to "add a grade" or "calculate an average."
+Objects are created from classes, which act as blueprints. A class defines the attributes and methods an object will have.
+
+#Skill: Understand Public / Private
+In OOP, attributes and methods can have different access levels:
+
+Public attributes or methods can be accessed from outside the class.
+Private attributes or methods are intended to be used only within the class to secure or hide data from external modifications.
+
+#Skill: Understand Attributes
+Attributes store data about an object. Sometimes, we want to control how that data is accessed or modified. We can use properties to manage this.
+
+#Skill: Employ Objects
+Objects (like pandas DataFrames) have attributes and methods.
+
+For example, a DataFrame object has a property like .shape to check its dimensions and methods like .head() to view the first few rows.
+
+import pandas as pd
+
+data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
+df = pd.DataFrame(data)
+
+# Access the shape property (no parentheses)
+print(df.shape)
+
+# Call a method to display the first few rows
+print(df.head())
+Skill: Employ Constructors
+To use an object, you call one of its constructors - a special method that creates an object for that class. 
+
+A constructor is a special method in object-oriented programming that is used to create and initialize an object for a class. In Python, the constructor method is always named __init__(). When you create a new instance of a class, the constructor is called automatically to set up the initial state of the object.
+
+For example, when you create a pandas DataFrame, you're using a constructor to initialize a new DataFrame object.  In the following code, a constructor is called to create a new DataFrame from a Python dictionary.
+
+import pandas as pd
+
+data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
+df = pd.DataFrame(data) 
+ 
+
+#Skill: Use the @property Decorator
+
+In Python, the @property decorator is used to define methods that behave like attributes. This is useful when you want to control access to an attribute without requiring the user to call a method explicitly.
+
+class Student:
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+A decorator in Python is a special function that allows you to modify or enhance the behavior of another function or method without changing its actual code. Decorators are often used to add functionality like logging, timing, or validation to functions or methods in a clean and reusable way.
+
+In Python, decorators are denoted using the @ symbol and are placed above the function they are modifying.
+
+#Properties. 
+
+One of the most commonly used properties in the pandas DataFrame class is the .shape property. We can see the implementation at: https://github.com/pandas-dev/pandas/blob/main/pandas/core/frame.py#L1012C1-L1031C50Links to an external site.
+
+    @property
+    def shape(self) -> tuple[int, int]:
+        return len(self.index), len(self.columns)
+
+#Skill: Understand OOP Inheritance
+Inheritance is a core concept of object oriented programming that allows a subclass to inherit attributes and methods from a base class (or parent class). This enables code reuse and the ability to create specific versions of more general objects.
+
+Base Class: A general class (e.g., Animal) that contains shared attributes and methods.
+Subclass: A more specific class (e.g., Dog, Cat) that inherits from the base class and can extend or modify its functionality.
+ 
+
+class Animal:
+    def speak(self):
+        raise NotImplementedError("Subclasses must implement this base speak() method")
+ 
+
+ 
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+ 
+
+Skill: Understand Polymorphism: One Interface, Many Implementations
+
+Polymorphism allows different classes to use the same method in different ways. It enables multiple types of objects to be processed through a common interface.
+
+For example, if you have a speak() method for various animals (dog, cat, rabbit, bird), each class can implement this method differently while using the same interface.
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow"
+ 
+
+Example
+# List of animal objects
+animals = [Dog(), Cat(), Rabbit(), Bird()]
+
+for animal in animals:
+    print(animal.speak())
+ 
+
+ 
+
+#Skill: Understand Method Overriding (Changing Behavior in Subclasses)
+
+Method overriding occurs when a subclass defines a method with the same name and parameters as a method in the base class, but with a different implementation. This allows the subclass to override the behavior of the base class method.
+
+Method Overloading: Python’s Approach
+Method overloading typically means defining multiple methods with the same name but different parameter lists. However, Python does not support method overloading in the traditional sense. Instead, it achieves similar functionality through:
+
+Default parameters: Specifying default values for arguments.
+Variable-length argument lists: Using *args or **kwargs to accept a variable number of arguments.
+In this example, add_numbers() can accept either one or two arguments due to the default parameter.
+
+def add_numbers(a, b=0):
+    return a + b
+Advanced Skill For Professionals: *args and **kwargs
+*args and **kwargs are fun to use and worth learning. We don't have time in this course, but you might ask your favorite AI to offer some good examples. 
+
+#Data Classes (New!)
+Data classes in Python, introduced in Python 3.7 via the dataclasses module, provide a convenient way to define classes that are primarily used to store data. They offer a clean syntax for creating classes by automatically adding special methods, including __init__, __repr__, __eq__, and others, based on the class attributes defined.
+
+Data classes are powerful and new - differentiate yourself by employing data classes in your projects! 
+
+Benefits
+Less Boilerplate: You don’t have to manually write methods like __init__ for setting up attributes.
+Readable Code: The syntax is clean and concise, making your code easier to read and maintain.
+Equality Comparison: Data classes automatically generate comparison methods, allowing easy comparison between instances.
+Example
+from dataclasses import dataclass
+
+@dataclass
+class Animal:
+    name: str
+    age: int
+
+# Create an instance
+dog = Animal("Buddy", 5)
+
+# Access the attributes and use the auto-generated methods
+print(dog)  # Output: Animal(name='Buddy', age=5)
