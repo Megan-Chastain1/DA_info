@@ -1,0 +1,28 @@
+#Skill: Write Basic SQL Queries to Create and Query Data
+SQL (Structured Query Language) is the standard language for working with relational databases.
+We use SQL to:
+
+Create tables
+
+Insert data
+
+Select and filter rows
+
+Sort results for analysis
+
+Knowing the core SQL commands helps you structure, explore, and retrieve data from a database. Knowing SQL well is a key data analyst skill - not so much memorizing - as understanding when and how to use SQL to get results. 
+
+#Skill: Use Advanced SQL to Join, Update, and Summarize Data
+Once you’ve mastered the basics, SQL provides more power to combine, modify, and analyze data.
+
+With advanced SQL, you can:
+
+Join tables together using shared keys
+
+Update or delete specific records
+
+Group data and calculate summaries like totals and averages
+
+These are core skills used every day by data analysts and database professionals.
+
+Match each function to the SQL.
